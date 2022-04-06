@@ -1,6 +1,9 @@
 import styled from "styled-components";
 import { colors } from "../../infrastructure/theme/colors";
+import { fontSizes } from "../../infrastructure/theme/fonts";
+import { FlexibleDiv } from "../flexibleDiv/flexibleDiv.component";
 import { Text } from "../typography/text.component";
+import { NotificationIcon as Icon } from "../../assets/svg";
 
 const drawer = "200px";
 
@@ -94,10 +97,10 @@ export const InnerWrapper = styled.div`
     }
   }
 `;
-export const LogoWrapper = styled.div`
+export const SearchBarSection = styled.div`
   width: auto;
-  height: 2rem;
-  cursor: pointer;
+  min-width: 50%;
+  height: auto;
 
   @media (max-width: 600px) {
     width: 50px;
@@ -110,8 +113,11 @@ export const Logo = styled.img`
   @media (max-width: 600px) {
   }
 `;
-export const UserProfileWrapper = styled.div`
+export const HeaderInfoSection = styled.div`
   width: max-content;
+  border: 1px solid ${colors.shade};
+  border-radius: 8px;
+  pading: 11px 15px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -121,9 +127,26 @@ export const UserProfileWrapper = styled.div`
   @media (max-width: 800px) {
   }
 `;
-export const UserName = styled(Text)``;
+export const NotificationContainer = styled(FlexibleDiv)`
+  padding: 0;
+`;
+export const NotificationIcon = styled(Icon)``;
+export const Ribbon = styled(FlexibleDiv)`
+  background: ${colors.red};
+  height: max-content;
+  width: max-content;
+  padding: 0.2rem;
+  border-radius: 4px;
+  border: 1px solid ${colors.red};
+`;
+export const RibbonText = styled(Text)`
+  font-size: ${fontSizes.small};
+  margin: 0;
+  color: ${colors.white};
+  line-height: ${fontSizes.small};
+`;
 
-export const Icon = styled("div")`
+export const UserProfileContainer = styled("div")`
   width: 2rem;
   height: 2rem;
   display: flex;
@@ -142,3 +165,7 @@ export const Icon = styled("div")`
     color: #a85d2a;
   }
 `;
+
+export const UserProfilePreview = styled(FlexibleDiv)``;
+
+export const UserProfileImage = styled.img``;

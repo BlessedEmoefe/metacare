@@ -28,7 +28,7 @@ export const SearchBar = ({
           placeholder={truncate(placeholder)}
         />
         <div className="svgWrapper">
-          <SearchIcon color="blue" className="svg" />
+          <SearchIcon color={colors.text.regular} className="svg" />
         </div>
       </SearchBarWrapper>
     </FlexibleDiv>

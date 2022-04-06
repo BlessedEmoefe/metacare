@@ -1,12 +1,20 @@
 export const colors = {
   //...DefaultTheme.colors,
 
-  primary: "#1C5FAB",
-  secondary: "#023828",
+  primary: "#25BB87",
+  purple: "#6837EF",
+  orange: "#F05D23",
+  red:"#F25A68",
+  pink: "#FB6491",
+  blue: "#07C9E2",
+
+  inputBg: {
+    largeInputBg: "#FAFAFC",
+    smallInputBg: "#E1E1EB",
+  },
 
   bg: {
     white: "#FFFFFF",
-    lightBg: "#c7ddf6",
     darkBg: "#F4F3F4",
   },
 
@@ -18,12 +26,12 @@ export const colors = {
     light: "#b3b3b3",
   },
 
-  iconColor: "#C3C3C3",
+  shade: "#ECEBF5",
 
   text: {
-    strong: "#A2A2A2",
-    regular: "#878896",
-    soft: "#7F7F7F",
+    strong: "#060213",
+    regular: "#696D8C",
+    soft: "#A3A3C2",
     light: "#fff",
   },
   headerShade: {
@@ -38,45 +46,4 @@ export const colors = {
     soft: "#929292",
     light: "#bebebe",
   },
-
-  error: "#fb6b6c",
-  red: "#fb6b6c",
-  green: "#55c595",
-  purple: "#85008a",
-  teal: "#15a7bf",
-
-  // yellow: {
-  //   strong: "#E4EC00",
-  // },
-  // ui: {
-  //   primary: "#262626",
-  //   secondary: "#757575",
-  //   tertiary: "#F1F1F1",
-  //   quaternary: "#FFFFFF",
-  //   disabled: "#DEDEDE",
-  //   error: "#D0421B",
-  //   success: "#138000",
-  // },
-
-  // red: {
-  //   strong: "#FA1E0E",
-  //   regular: "#fb4b3e",
-  //   soft: "#fd8f87",
-  //   light: "#fd8f87",
-  // },
-  // green: {
-  //   strong: "#00EC18",
-  //   regular: "#87eb7e",
-  //   soft: "#aaf1a3",
-  //   light: "#ccf7c8",
-  // },
-  // link: {
-  //   strong: "#0E49B5",
-  //   regular: "#3e6dc4",
-  //   soft: "#6e92d3",
-  //   light: "#9fb6e1",
-  // },
-  // blue: {
-  //   strong: "#0018EC",
-  // },
 };

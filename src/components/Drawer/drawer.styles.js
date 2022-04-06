@@ -142,36 +142,18 @@ export const DrawerWrap = styled("div")`
     }
   }
   .iconize {
-    position: absolute;
-    left: ${({ smallDrawer }) => (!smallDrawer ? "0" : "15px")};
-    right: ${({ smallDrawer }) => (!smallDrawer ? "0" : "auto")};
+    // position: absolute;  
+    // left: ${({ smallDrawer }) => (!smallDrawer ? "0" : "15px")};
+    // right: ${({ smallDrawer }) => (!smallDrawer ? "0" : "auto")};
 
     margin-left: ${({ smallDrawer }) => (smallDrawer ? "-2px" : "13px")};
-    top: 13px;
-    padding: 8px;
-    border-radius: 50%;
-    height: 35px;
-    width: 35px;
+    justify-content:center;
+    top: 10px;
+    padding:5px 3px;
+    width:100%;
+    height: auto;
     overflow: hidden;
     cursor: pointer;
-    .ripple {
-      width: 100%;
-      top: 0;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      height: 100%;
-      background: ${({ smallDrawer }) =>
-        !(smallDrawer === "true") && "#6a666642"};
-      animation: ${({ smallDrawer }) =>
-        smallDrawer === undefined
-          ? "none"
-          : smallDrawer
-          ? " rippleForward 300ms ease-in-out forwards"
-          : "rippleBack 300ms ease-in-out forwards"};
-      position: absolute;
-      border-radius: 50%;
-    }
     &:hover {
       background: #88898c1a;
     }

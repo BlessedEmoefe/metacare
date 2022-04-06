@@ -12,6 +12,7 @@ import DrawerProfileCard from "./DrawerProfileCard";
 // import { USER_LOGOUT } from "../../infrastructure/store/types/user";
 // import AppContext from "../../infrastructure/store/context";
 import { useNavigate, useLocation } from "react-router-dom";
+import { UserLogoCard } from "../userLogoCard/userLogoCard.component";
 
 export const Drawer = ({
   handleSmallDrawer,
@@ -40,10 +41,11 @@ export const Drawer = ({
           className="enlargeDrawer iconize"
           onClick={() => handleSmallDrawer()}
         >
-          <div className="ripple" />
-          <ListIcon width="20px" height="20px" color="#88898c" />
+          {/* <div className="ripple" /> */}
+          {/* <ListIcon width="20px" height="20px" color="#88898c" /> */}
+          <UserLogoCard />
         </FlexibleDiv>
-        <DrawerProfileCard smallDrawer={smallDrawer} />
+        {/* <DrawerProfileCard smallDrawer={smallDrawer} /> */}
         <div className="container">
           <ul>
             {drawerItems.map(({ path, logo, name }) => {
@@ -121,7 +123,7 @@ export const ModalDrawer = ({
           </a>
         </div>
 
-        <DrawerProfileCard smallDrawer={smallDrawer} />
+        {/* <DrawerProfileCard smallDrawer={smallDrawer} /> */}
 
         <div className="container">
           <ul>

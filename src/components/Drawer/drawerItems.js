@@ -1,32 +1,66 @@
 import React from "react";
 import {
-  OverviewIcon2,
+  AdminIcon,
   CustomerIcon,
   IOUIcon,
-FixedIcon
+  FixedIcon,
+  AgentIcon,
+  HelpCenterIcon,
+  AnalyticsIcon,
+  TrainSAMIcon,
 } from "../../assets/svg";
 
 export const drawerItems = [
   {
-    name: "Overview",
-    logo: <OverviewIcon2 width="16px" height="16px" color="black" />,
+    name: "Admin",
+    logo: <AdminIcon width="16px" height="16px" color="black" />,
     path: "/overview",
   },
   {
-    name: "My Customers",
-    logo: <CustomerIcon width="20px" height="20px" color="black" />,
+    name: "Knowledge Base",
+    logo: <TrainSAMIcon width="20px" height="20px" color="black" />,
     path: "/customers",
   },
   {
-    name: "IOU",
-    logo: <IOUIcon width="20px" height="20px" color="black" />,
+    name: "Train SAM",
+    logo: <TrainSAMIcon width="20px" height="20px" color="black" />,
     path: "/iou",
   },
   {
-    name: "Fixed",
-    logo: <FixedIcon width="20px" height="20px" color="black" />,
+    name: "Agent Inbox",
+    logo: <AgentIcon width="20px" height="20px" color="black" />,
     path: "/fixed",
   },
+  {
+    name: "Help Center",
+    logo: <HelpCenterIcon width="20px" height="20px" color="black" />,
+    path: "/fixed",
+  },
+  {
+    name: "Analytics",
+    logo: <AnalyticsIcon width="20px" height="20px" color="black" />,
+    path: "/fixed",
+  },
+  // {
+  //   name: "Fixed",
+  //   logo: <FixedIcon width="20px" height="20px" color="black" />,
+  //   path: "/fixed",
+  // },
+  // {
+  //   name: "Fixed",
+  //   logo: <FixedIcon width="20px" height="20px" color="black" />,
+  //   path: "/fixed",
+  // },
+  // {
+  //   name: "Fixed",
+  //   logo: <FixedIcon width="20px" height="20px" color="black" />,
+  //   path: "/fixed",
+  // },
+  // {
+  //   name: "Fixed",
+  //   logo: <FixedIcon width="20px" height="20px" color="black" />,
+  //   path: "/fixed",
+  // },
   // {
   //   name: "Class & Subjects",
   //   logo: <ElearningIcon width="20px" height="20px" color="black" />,

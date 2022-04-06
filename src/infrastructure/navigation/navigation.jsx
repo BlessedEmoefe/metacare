@@ -1,11 +1,11 @@
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import UserType from "../../features/UserType/UserType.page";
+import Dashboard from "../../features/Dashboard/Dashboard.screens";
 
 const Navigation = () => {
   return (
     <Router>
       <Routes>
-        <Route exact element={<UserType />} path="/" />
+        <Route exact element={<Dashboard />} path="/" />
         <Route
           path="*"
           element={

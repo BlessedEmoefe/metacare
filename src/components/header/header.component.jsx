@@ -6,10 +6,16 @@ import logo from "../../assets/images/logo.png";
 import {
   HeaderContainer,
   InnerWrapper,
-  LogoWrapper,
+  SearchBarSection,
   Logo,
-  UserProfileWrapper,
-  UserName,
+  HeaderInfoSection,
+  NotificationContainer,
+  NotificationIcon,
+  Ribbon,
+  RibbonText,
+  UserProfileContainer,
+  UserProfilePreview,
+  UserProfileImage
 } from "./header.styles";
 
 // import { GiHamburgerMenu as NavIcon } from "react-icons/gi";
@@ -18,12 +24,11 @@ import {
   MdDashboardCustomize as MenuIcon,
   // MdClose as CloseIcon,
 } from "react-icons/md";
-
-// import { Link } from "react-router-dom";
 import { FlexibleDiv } from "../flexibleDiv/flexibleDiv.component";
-
 import { fontSizes, fontWeights } from "../../infrastructure/theme/fonts";
 import { colors } from "../../infrastructure/theme/colors";
+import { SearchBar } from "../SearchBar/searchBar.component";
+import { BottomArrowIcon } from "../../assets/svg";
 
 const Header = ({ smallDrawer, handleNoDrawer }) => {
   // const [displayNav, setDisplayNav] = useState(false);
@@ -40,27 +45,38 @@ const Header = ({ smallDrawer, handleNoDrawer }) => {
             <MenuIcon size="20px" color={colors.white} />
           </div>
         </FlexibleDiv>
-        <LogoWrapper>
-          <Logo src={logo} alt="logo" />
-        </LogoWrapper>
+        <SearchBarSection>
+          <SearchBar
+            xl
+            placeholder="Ask us any question"
+            handleChange={() => {
+              // handleNewCustomer();
+            }}
+            color={colors.black.strong}
+          />
+        </SearchBarSection>
 
-        <UserProfileWrapper
+        <HeaderInfoSection
           onClick={() => {
             console.log("Hello world");
           }}
         >
-          <UserProfileIcon size="1.6rem" color={colors.white} />
-          <UserName
-            fontSize={fontSizes.smallTitle}
-            fontWeight={fontWeights.semiBold}
-            color={colors.white}
-            marginLeft="4px"
-          >
-            Gage Walker
-          </UserName>
-        </UserProfileWrapper>
+          <NotificationContainer>
+            <NotificationIcon size="1.6rem" color={colors.white} />
+            <Ribbon>
+              <RibbonText>3</RibbonText>
+            </Ribbon>
+          </NotificationContainer>
 
-        {/* <div className="mobileOverlay" onClick={() => setShowMenu(!showMenu)} /> */}
+          <UserProfileContainer>
+            <UserProfilePreview>
+              {/* <UserProfileImage src={} alt="profile-Image"/>  */}
+            </UserProfilePreview>
+            <BottomArrowIcon />
+          </UserProfileContainer>
+        </HeaderInfoSection>
+
+        {/* <div className="mobileOverlay" onClick={() => setShowMenu(!showMenu)} />*/}
       </InnerWrapper>
     </HeaderContainer>
   );

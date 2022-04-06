@@ -4,28 +4,32 @@ import { fontSizes } from "../../infrastructure/theme/fonts";
 
 export const SearchBarWrapper = styled("div")`
   width: ${({ fullWidth }) => (fullWidth ? "100%" : "max-content")};
-  height: ${({ height, xl }) => (height ? height : xl ? "4rem" : "2.5rem")};
+  height: ${({ height, xl }) => (height ? height : xl ? "54px" : "44px")};
   display: flex;
+  flex-direction: ${({ xl }) => (xl ? "row" : "row-reverse")};
   align-items: center;
-  background: #fff;
-  border-radius: 20px;
-  /* border: 1px solid ${colors.iconColor}; */
+  background: ${({ bg, xl }) =>
+    bg ? bg : xl ? colors.inputBg.largeInputBg : "#fff"};
+  border-radius: 10px;
+  border: 1px solid
+    ${({ xl }) => (xl ? "transparent" : colors.inputBg.smallInputBg)};
+  ${colors.iconColor};
   overflow: hidden;
   box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px,
     rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
 
   .svgWrapper {
-    width: 30%;
+    width: auto;
     height: 100%;
-    border-radius: 19px;
     cursor: pointer;
-    background: ${colors.bg.lightBg};
+    background: transparent;
     display: flex;
     justify-content: center;
     align-items: center;
+    padding: 0 1.3rem;
     .svg {
-      color: ${({ color }) => (color ? color : colors.primary)};
-      font-size: ${({ xl }) => (xl ? "2rem" : "1.2rem")};
+      color: ${({ color }) => (color ? color : colors.text.regular)};
+      font-size: ${({ xl }) => (xl ? "14px" : "10.5px")};
     }
   }
 
@@ -37,13 +41,14 @@ export const SearchBarWrapper = styled("div")`
     flex: 1;
     height: 100%;
     padding: 0.5rem;
-    padding-left: 0.9rem;
+    padding-left: ${({ xl }) => (xl ? "0.9rem" : "0.3rem")};
+    background: transparent;
     outline: 0;
     font-family: inherit;
 
     ::placeholder {
       color: ${({ color }) => (color ? color : colors.primary)};
-      font-size: ${({ xl }) => (xl ? "1.3rem" : `${fontSizes.smallBody}`)};
+      font-size: ${fontSizes.smallBody};
     }
   }
 `;
