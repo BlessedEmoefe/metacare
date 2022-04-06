@@ -1,5 +1,4 @@
 import React from "react";
-import { fontWeights } from "../../infrastructure/theme/fonts";
 import {
   UserLogoCardContainer,
   LogoText,

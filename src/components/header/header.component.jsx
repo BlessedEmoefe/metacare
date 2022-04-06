@@ -1,13 +1,8 @@
-import React, {
-  useState,
-  // useEffect
-} from "react";
-import logo from "../../assets/images/logo.png";
+import React, { useState } from "react";
 import {
   HeaderContainer,
   InnerWrapper,
   SearchBarSection,
-  Logo,
   HeaderInfoSection,
   NotificationContainer,
   NotificationIcon,
@@ -15,24 +10,22 @@ import {
   RibbonText,
   UserProfileContainer,
   UserProfilePreview,
-  UserProfileImage
+  UserProfileImage,
 } from "./header.styles";
-
-// import { GiHamburgerMenu as NavIcon } from "react-icons/gi";
-import { FaUserCog as UserProfileIcon } from "react-icons/fa";
 import {
   MdDashboardCustomize as MenuIcon,
   // MdClose as CloseIcon,
 } from "react-icons/md";
 import { FlexibleDiv } from "../flexibleDiv/flexibleDiv.component";
-import { fontSizes, fontWeights } from "../../infrastructure/theme/fonts";
+// import { fontSizes, fontWeights } from "../../infrastructure/theme/fonts";
 import { colors } from "../../infrastructure/theme/colors";
 import { SearchBar } from "../SearchBar/searchBar.component";
 import { BottomArrowIcon } from "../../assets/svg";
+import ProfileImage from "../../assets/images/passport.jpg";
 
 const Header = ({ smallDrawer, handleNoDrawer }) => {
   // const [displayNav, setDisplayNav] = useState(false);
-  const [showMenu, setShowMenu] = useState(undefined);
+  const [showMenu] = useState(undefined);
   // const toggleNav = () => {
   //   setDisplayNav(!displayNav);
   // };
@@ -70,7 +63,7 @@ const Header = ({ smallDrawer, handleNoDrawer }) => {
 
           <UserProfileContainer>
             <UserProfilePreview>
-              {/* <UserProfileImage src={} alt="profile-Image"/>  */}
+              <UserProfileImage src={ProfileImage} alt="profile-Image" />
             </UserProfilePreview>
             <BottomArrowIcon />
           </UserProfileContainer>

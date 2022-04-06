@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { colors } from "../../infrastructure/theme/colors.js";
 import { fontWeights, fontSizes } from "../../infrastructure/theme/fonts";
 import { Text } from "../typography/text.component.js";
-import { Loader } from "../loaders/loaders.component";
+// import { Loader } from "../loaders/loaders.component";
 
 export const ButtonStyles = styled.button`
   cursor: pointer;

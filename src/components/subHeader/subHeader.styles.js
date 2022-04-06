@@ -1,6 +1,5 @@
 import styled from "styled-components";
 import { FlexibleDiv } from "../../components/flexibleDiv/flexibleDiv.component";
-import { Text } from "../../components/typography/text.component";
 import { colors } from "../../infrastructure/theme/colors";
 import { fontSizes, fontWeights } from "../../infrastructure/theme/fonts";
 import { Link } from "react-router-dom";

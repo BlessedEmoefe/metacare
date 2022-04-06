@@ -1,14 +1,14 @@
 import React from /* { useContext }*/ "react";
 import { DrawerWrap } from "./drawer.styles";
 import { drawerItems } from "./drawerItems";
-import { ListIcon, RightArrowIcon } from "../../assets/svg";
+// import DrawerProfileCard from "./DrawerProfileCard";
+import { RightArrowIcon } from "../../assets/svg";
 import { FlexibleDiv } from "../flexibleDiv/flexibleDiv.component";
 import Logo from "../../assets/images/logo.png";
 import { generateID } from "../../infrastructure/lib/generateID";
 // import { MODE } from "../../infrastructure/lib/constants";
 // import { useMutation } from "@apollo/client";
 // import { LOGOUT } from "../../infrastructure/lib/queries/index.gql";
-import DrawerProfileCard from "./DrawerProfileCard";
 // import { USER_LOGOUT } from "../../infrastructure/store/types/user";
 // import AppContext from "../../infrastructure/store/context";
 import { useNavigate, useLocation } from "react-router-dom";
