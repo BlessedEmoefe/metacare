@@ -177,8 +177,8 @@ export const UserProfileContainer = styled("div")`
 `;
 
 export const UserProfilePreview = styled(FlexibleDiv)`
-  width: 33px;
-  height: 33px;
+  width: 37px;
+  height: 37px;
   border: 1px solid ${colors.purple};
   border-radius: 50%;
   padding: 0;
@@ -186,7 +186,8 @@ export const UserProfilePreview = styled(FlexibleDiv)`
 `;
 
 export const UserProfileImage = styled.img`
-  width: 32px;
-  height: 32px;
+  width: 35px;
+  height: 35px;
   border-radius: 50%;
+  
 `;

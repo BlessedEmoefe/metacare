@@ -14,7 +14,7 @@ const variantSize = (size) =>
 
 const SpacerStyle = styled.div`
   flex: 1;
-  padding: ${({ size }) => size ?  variantSize(size) || size : "0.5rem"} 0;
+  padding: ${({ size }) => size ?  variantSize(size) || size : "0.5rem"};
 
 `
 export const Spacer = ({size}) => {
