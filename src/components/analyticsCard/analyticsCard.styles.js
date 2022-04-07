@@ -68,7 +68,7 @@ export const Indicator = styled(FlexibleDiv)`
   width: 10px;
   height: 10px;
   margin-right: 0.7rem;
-  background: yellow;
+  background: ${({ color }) => (color ? color : "yellow")}; 
 `;
 export const HighPriorityText = styled(Text)`
   color: ${colors.black.strong};

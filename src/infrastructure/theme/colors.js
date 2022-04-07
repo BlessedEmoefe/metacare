@@ -4,9 +4,10 @@ export const colors = {
   primary: "#25BB87",
   purple: "#6837EF",
   orange: "#F05D23",
-  red:"#F25A68",
+  red: "#F25A68",
   pink: "#FB6491",
-  blue: "#07C9E2",
+  blue: "#3E68FF",
+  lightBlue: "#07C9E2",
 
   inputBg: {
     largeInputBg: "#FAFAFC",

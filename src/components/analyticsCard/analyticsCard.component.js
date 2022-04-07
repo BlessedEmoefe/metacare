@@ -33,8 +33,6 @@ import {
 import { Line } from "react-chartjs-2";
 import { Spacer } from "../spacer/spacer.component";
 
-
-
 ChartJS.register(
   CategoryScale,
   LinearScale,
@@ -69,34 +67,25 @@ export const options = {
   },
 };
 
-const labels = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug"];
-
-// export const data = {
-//   labels,
-//   datasets: [
-//     {
-//       label: "Dataset 1",
-//       data: [10, 18, 48, 8, 42, 32, 45, 12],
-//       borderColor: "rgb(255, 99, 132)",
-//       backgroundColor: "#fff",
-//     },
-//   ],
-// };
-
-export const AnalyticsCard = ({chartData}) => {
+export const AnalyticsCard = ({
+  chartName,
+  chartData,
+  cardName,
+  timeStamp,
+}) => {
   return (
     <AnalyticsCardContainer>
       <ChartSection>
         <ChartTools>
           <LeftTopSection>
-            <ChartName>Average Response Time</ChartName>
+            <ChartName>{chartData.chartName}</ChartName>
             <PercentageBtn>
               <PercentageBtnText>+4.14%</PercentageBtnText>
             </PercentageBtn>
           </LeftTopSection>
           <RightTopSection>
             <HighPriority>
-              <Indicator />
+              <Indicator color={chartData.datasets[0].borderColor} />
               <HighPriorityText>High Priority</HighPriorityText>
             </HighPriority>
 
@@ -117,15 +106,15 @@ export const AnalyticsCard = ({chartData}) => {
       </ChartSection>
       <CardSection>
         <Card flexDirection="column">
-          <ResponseTime>Average Response Time</ResponseTime>
+          <ResponseTime>{chartData.cardName}</ResponseTime>
           <Spacer />
           <TimeStamp>30 Mins</TimeStamp>
         </Card>
         <Spacer size="small" />
         <Card flexDirection="column">
-          <ResponseTime>Average Response Time</ResponseTime>
+          <ResponseTime>Response Time</ResponseTime>
           <Spacer />
-          <TimeStamp>30 Mins</TimeStamp>
+          <TimeStamp>1 Hour 30 Mins</TimeStamp>
         </Card>
       </CardSection>
     </AnalyticsCardContainer>
