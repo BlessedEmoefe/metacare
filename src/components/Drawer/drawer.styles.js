@@ -86,12 +86,10 @@ export const DrawerWrap = styled("div")`
         min-width: ${({ smallDrawer }) => smallDrawer && " 195px"};
         transition: 300ms ease-in-out;
         display: flex;
-        justify-content: flex-start;
+        justify-content: space-between;
+        // background: blue;
         align-items: center;
-        .logoMain {
-          margin-right: 13px;
-          transition: 300ms ease-in-out;
-        }
+
         @keyframes fade {
           0% {
             opacity: 1;
@@ -104,14 +102,33 @@ export const DrawerWrap = styled("div")`
             opacity: 0;
           }
         }
-        span {
-          font-size: 0.8rem;
-          color: ${colors.black.regular};
-          white-space: nowrap;
-          transition: 300ms ease-in-out;
-          min-width: ${({ smallDrawer }) => !smallDrawer && "120px"};
-          animation: ${({ smallDrawer }) =>
-            !smallDrawer && "fade 300ms forwards"};
+        .iconTextWrapper {
+          display: flex;
+          justify-self: flex-start;
+          // background: teal;
+          width: auto;
+
+          .logoMain {
+            width: auto;
+            margin-right: 13px;
+            transition: 300ms ease-in-out;
+          }
+          span {
+            font-size: 0.9rem;
+            color: ${colors.black.regular};
+            white-space: nowrap;
+            transition: 300ms ease-in-out;
+            min-width: ${({ smallDrawer }) => !smallDrawer && "80%"};
+            animation: ${({ smallDrawer }) =>
+              !smallDrawer && "fade 300ms forwards"};
+          }
+        }
+
+        .iconWrapper {
+          display: flex;
+          justify-self: flex-end;
+          // background: teal;
+          width: auto;
         }
       }
       &:hover {
@@ -142,15 +159,15 @@ export const DrawerWrap = styled("div")`
     }
   }
   .iconize {
-    // position: absolute;  
+    // position: absolute;
     // left: ${({ smallDrawer }) => (!smallDrawer ? "0" : "15px")};
     // right: ${({ smallDrawer }) => (!smallDrawer ? "0" : "auto")};
 
     margin-left: ${({ smallDrawer }) => (smallDrawer ? "-2px" : "13px")};
-    justify-content:center;
+    justify-content: center;
     top: 10px;
-    padding:5px 3px;
-    width:100%;
+    padding: 10px 3px;
+    width: 100%;
     height: auto;
     overflow: hidden;
     cursor: pointer;

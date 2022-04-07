@@ -11,12 +11,8 @@ export const SearchBarWrapper = styled("div")`
   background: ${({ bg, xl }) =>
     bg ? bg : xl ? colors.inputBg.largeInputBg : "#fff"};
   border-radius: 10px;
-  border: 1px solid
-    ${({ xl }) => (xl ? "transparent" : colors.inputBg.smallInputBg)};
-  ${colors.iconColor};
+  border: ${({ xl }) => (xl ? "none" : `1px solid ${colors.inputBg.smallInputBg}`)};
   overflow: hidden;
-  box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px,
-    rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
 
   .svgWrapper {
     width: auto;
@@ -36,7 +32,8 @@ export const SearchBarWrapper = styled("div")`
   input {
     border: none;
     color: ${({ color }) => (color ? color : colors.primary)};
-    font-size: ${({ xl }) => (xl ? "1.3rem" : `${fontSizes.smallBody}`)};
+    font-size: ${({ xl }) =>
+      xl ? ` ${fontSizes.body}` : `${fontSizes.smallBody}`};
     width: 100%;
     flex: 1;
     height: 100%;
@@ -47,7 +44,7 @@ export const SearchBarWrapper = styled("div")`
     font-family: inherit;
 
     ::placeholder {
-      color: ${({ color }) => (color ? color : colors.primary)};
+      color: ${({ color }) => (color ? color : colors.text.regular)};
       font-size: ${fontSizes.smallBody};
     }
   }

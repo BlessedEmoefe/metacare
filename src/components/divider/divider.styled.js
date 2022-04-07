@@ -9,13 +9,18 @@ export const DividerLine = styled("div")`
   margin: ${({ margin }) => (margin ? margin : "5px auto")};
   background: linear-gradient(left, #f5f5f5 2%, #bdbdbd 50%, #f5f5f5 98%);
 `;
-export const VerticalDividerLineWrapper = styled(FlexibleDiv)``;
+export const VerticalDividerLineWrapper = styled(FlexibleDiv)`
+  padding: 0;
+  background: red;
+  height: 100%;
+  margin: ${({ margin }) => (margin ? margin : "0")};
+`;
 export const VerticalDividerLine = styled("div")`
   width: ${({ width }) => (width ? width : "1px")};
   height: ${({ height }) => (height ? height : "100%")};
   background: ${({ background }) =>
     background ? background : colors.black.soft};
-  margin: ${({ margin }) => (margin ? margin : "0")};
+  
   position: absolute;
   padding: 0;
   max-height: inherit;

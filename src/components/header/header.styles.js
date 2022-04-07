@@ -10,12 +10,12 @@ const drawer = "200px";
 export const HeaderContainer = styled.div`
   width: ${({ smallDrawer }) =>
     smallDrawer ? `calc(100% - ${drawer})` : " calc(100% - 50px)"};
-  background-color: ${colors.primary};
-  padding: 1rem 3%;
+  padding: 10px 2%;
   z-index: 100;
   transition: 300ms ease-in-out;
+  border-bottom: 1px solid ${colors.shade};
   display: flex;
-  height: 60px;
+  height: auto;
   top: 0;
   right: 0;
   left: 0;
@@ -99,7 +99,7 @@ export const InnerWrapper = styled.div`
 `;
 export const SearchBarSection = styled.div`
   width: auto;
-  min-width: 50%;
+  min-width: 40%;
   height: auto;
 
   @media (max-width: 600px) {
@@ -114,28 +114,39 @@ export const Logo = styled.img`
   }
 `;
 export const HeaderInfoSection = styled.div`
-  width: max-content;
+  width: auto;
+  height: 100%;
   border: 1px solid ${colors.shade};
   border-radius: 8px;
-  pading: 11px 15px;
+  padding: 0.3rem 15px;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
+  position: relative;
+  @media (max-width: 800px) {
+    width:40%;
+  }
+`;
+export const NotificationContainer = styled.div`
+  padding: 0;
+  width: auto;
+  display:flex;
+  justify-content:space-around;
   :hover {
     cursor: pointer;
   }
   @media (max-width: 800px) {
   }
 `;
-export const NotificationContainer = styled(FlexibleDiv)`
-  padding: 0;
+export const NotificationIcon = styled(Icon)`
+  // margin-left: 0.3rem;
 `;
-export const NotificationIcon = styled(Icon)``;
-export const Ribbon = styled(FlexibleDiv)`
+export const Ribbon = styled.div`
   background: ${colors.red};
   height: max-content;
   width: max-content;
   padding: 0.2rem;
+  margin-left: 0.3rem;
   border-radius: 4px;
   border: 1px solid ${colors.red};
 `;
@@ -147,25 +158,33 @@ export const RibbonText = styled(Text)`
 `;
 
 export const UserProfileContainer = styled("div")`
-  width: 2rem;
-  height: 2rem;
+  width: auto;
+  height: auto;
+  padding: 0.2rem 0.5rem;
   display: flex;
   justify-content: center;
   align-items: center;
   border-radius: 50px;
   cursor: pointer;
   transition: background 0.1s ease-in-out;
-
-  &:hover {
-    background: #ddd;
+  :hover {
+    cursor: pointer;
   }
-
-  svg {
-    font-size: 1.5rem;
-    color: #a85d2a;
+  @media (max-width: 800px) {
   }
 `;
 
-export const UserProfilePreview = styled(FlexibleDiv)``;
+export const UserProfilePreview = styled(FlexibleDiv)`
+  width: 33px;
+  height: 33px;
+  border: 1px solid ${colors.purple};
+  border-radius: 50%;
+  padding: 0;
+  margin-right: 0.5rem;
+`;
 
-export const UserProfileImage = styled.img``;
+export const UserProfileImage = styled.img`
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+`;

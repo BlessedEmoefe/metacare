@@ -17,11 +17,11 @@ import {
   // MdClose as CloseIcon,
 } from "react-icons/md";
 import { FlexibleDiv } from "../flexibleDiv/flexibleDiv.component";
-// import { fontSizes, fontWeights } from "../../infrastructure/theme/fonts";
 import { colors } from "../../infrastructure/theme/colors";
 import { SearchBar } from "../SearchBar/searchBar.component";
 import { BottomArrowIcon } from "../../assets/svg";
 import ProfileImage from "../../assets/images/passport.jpg";
+import { VerticalDivider } from "../divider/divider.component";
 
 const Header = ({ smallDrawer, handleNoDrawer }) => {
   // const [displayNav, setDisplayNav] = useState(false);
@@ -35,7 +35,7 @@ const Header = ({ smallDrawer, handleNoDrawer }) => {
         <FlexibleDiv className="major">
           <div className="rightArrow iconize" onClick={() => handleNoDrawer()}>
             <div className="ripple" />
-            <MenuIcon size="20px" color={colors.white} />
+            <MenuIcon size="20px" color={colors.primary} />
           </div>
         </FlexibleDiv>
         <SearchBarSection>
@@ -54,12 +54,19 @@ const Header = ({ smallDrawer, handleNoDrawer }) => {
             console.log("Hello world");
           }}
         >
-          <NotificationContainer>
-            <NotificationIcon size="1.6rem" color={colors.white} />
+          <NotificationContainer
+          >
+            <NotificationIcon />
             <Ribbon>
               <RibbonText>3</RibbonText>
             </Ribbon>
           </NotificationContainer>
+
+          <VerticalDivider
+            height={"70%"}
+            margin="0 0.8rem"
+            background={colors.shade}
+          />
 
           <UserProfileContainer>
             <UserProfilePreview>
