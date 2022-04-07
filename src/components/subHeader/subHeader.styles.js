@@ -2,45 +2,39 @@ import styled from "styled-components";
 import { FlexibleDiv } from "../../components/flexibleDiv/flexibleDiv.component";
 import { colors } from "../../infrastructure/theme/colors";
 import { fontSizes, fontWeights } from "../../infrastructure/theme/fonts";
-import { Link } from "react-router-dom";
+import { Text } from "../typography/text.component";
 
 export const SubHeaderContainer = styled(FlexibleDiv)`
   justify-content: space-between;
+  padding: 15px 2%;
 `;
 export const DirectorySection = styled(FlexibleDiv)`
   width: auto;
-  min-width: 30%;
   justify-content: flex-start;
 `;
-
-export const SearchBarSection = styled(FlexibleDiv)`
-  width: auto;
-  min-width: 45%;
-`;
-
-export const ButtonSection = styled(FlexibleDiv)`
-  width: auto;
-  min-width: 20%;
-`;
-
-export const MainDirectory = styled(Link)`
+export const MainDirectory = styled(Text)`
   color: ${colors.black.strong};
-  font-size: ${fontSizes.title};
+  font-size: ${fontSizes.h5};
   font-weight: ${fontWeights.bold};
   text-decoration: none;
   cursor: pointer;
 `;
 
-export const Wrapper = styled(FlexibleDiv)`
-  width: auto;
-  height: auto;
-  margin: 0 0.7rem;
+export const SearchBarSection = styled(FlexibleDiv)`
+  width: 55%;
 `;
 
-export const SubDirectory = styled(Link)`
-  color: ${colors.black.strong};
-  font-size: ${fontSizes.smallBody};
-  font-weight: ${fontWeights.semiBold};
-  text-decoration: none;
-  cursor: pointer;
+export const DropDownWrapper = styled(FlexibleDiv)`
+  width: 25%;
+  height: auto;
+`;
+
+export const ButtonSection = styled(FlexibleDiv)`
+  width: 15%;
+`;
+
+export const Wrapper = styled(FlexibleDiv)`
+  width: 60%;
+  height: auto;
+  justify-content: space-between;
 `;

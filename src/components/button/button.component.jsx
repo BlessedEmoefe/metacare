@@ -7,10 +7,11 @@ import { Text } from "../typography/text.component.js";
 export const ButtonStyles = styled.button`
   cursor: pointer;
   width: 100%;
+  height:45px;
   background: ${({ background }) => (background ? background : colors.primary)};
   border: ${({ border }) => (border ? border : "0px")};
   border-radius: ${({ borderRadius }) =>
-    borderRadius ? borderRadius : "10px"};
+    borderRadius ? borderRadius : "8px"};
   padding: ${({ size }) => (size ? "0.8rem" : "0.3rem")} 0;
   color: ${({ btnColor }) => (btnColor ? btnColor : colors.white)};
   display: flex;

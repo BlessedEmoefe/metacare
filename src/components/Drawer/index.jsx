@@ -15,13 +15,7 @@ export const Drawer = ({
 }) => {
   const navigate = useNavigate();
   const location = useLocation();
-  // const [onLogout] = useMutation(LOGOUT);
-  // const { dispatch } = useContext(AppContext);
   const isActive = (href) => location.pathname === href;
-
-  // const handleLogout = () => {
-  //   console.log(location.pathname);
-  // };
 
   return (
     <DrawerWrap

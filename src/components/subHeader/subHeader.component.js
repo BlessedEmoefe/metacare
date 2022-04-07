@@ -7,56 +7,45 @@ import {
   SearchBarSection,
   ButtonSection,
   MainDirectory,
+  DropDownWrapper,
   Wrapper,
-  SubDirectory,
 } from "./subHeader.styles";
 import { Button } from "../button/button.component";
-import { BsPlusCircle as AddIcon } from "react-icons/bs";
-import { RightArrowIcon } from "../../assets/svg";
+import { SelectDropdown } from "../selectDropdown/selectDropdown.component";
 
-export const SubHeader = ({ subDirectory, searchBar, btnText }) => {
+export const SubHeader = ({ directory, searchBar, btnText }) => {
   const handleNewCustomer = () => {
     console.log("Hello New customer being created");
   };
   return (
-    <SubHeaderContainer paddingVertical="0">
+    <SubHeaderContainer>
       <DirectorySection paddingVertical="0">
-        <MainDirectory to="/overview">Overview</MainDirectory>
-        {subDirectory ? (
-          <Wrapper>
-            <RightArrowIcon
-              color={colors.black.strong}
-              height={12}
-              width={12}
-            />
-          </Wrapper>
-        ) : null}
-
-        {subDirectory ? <SubDirectory to="">{subDirectory}</SubDirectory> : null}
+        <MainDirectory>{directory}</MainDirectory>
       </DirectorySection>
-      {searchBar ? (
-        <SearchBarSection paddingVertical="0">
-          <SearchBar
-            placeholder="Please input your search keywords"
-            handleChange={() => {
-              handleNewCustomer();
-            }}
-            color={colors.black.strong}
-          />
-        </SearchBarSection>
-      ) : null}
-      <ButtonSection paddingVertical="0">
-        {btnText ? (
-          <Button
-            btnText={btnText}
-            background="transparent"
-            border={`1px solid ${colors.primary}`}
-            btnColor={colors.primary}
-            onClick={handleNewCustomer}
-            LeftIcon={AddIcon}
-          />
+      <Wrapper paddingVertical={"0"}>
+        {searchBar ? (
+          <SearchBarSection paddingVertical="0">
+            <SearchBar
+              placeholder="Search"
+              handleChange={() => {
+                handleNewCustomer();
+              }}
+              color={colors.black.regular}
+            />
+          </SearchBarSection>
         ) : null}
-      </ButtonSection>
+        <DropDownWrapper paddingVertical="0">
+          <SelectDropdown  selectOptions={["option1","option1","option1","option1","option1"]}
+  selectLabel={"Filter Options"}
+  color={colors.black.strong}/>
+        </DropDownWrapper>
+
+        <ButtonSection paddingVertical="0">
+          {btnText ? (
+            <Button btnText={btnText} onClick={handleNewCustomer} />
+          ) : null}
+        </ButtonSection>
+      </Wrapper>
     </SubHeaderContainer>
   );
 };

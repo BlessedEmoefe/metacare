@@ -12,7 +12,7 @@ const Dashboard = () => {
   return (
     <GeneralLayout>
       <TabHeader />
-      <SubHeader subDirectory={"Amount Deposited"} searchBar />
+      <SubHeader directory={"Efficiency Analytics"} searchBar btnText={"Export"} />
       <Spacer />
     </GeneralLayout>
   );

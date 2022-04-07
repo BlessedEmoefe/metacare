@@ -3,9 +3,9 @@ import { SelectDropdownWrapper } from "./selectDropdown.styles";
 
 const Select = ({ onChange, id, value, label, options = [] }) => {
   const [active, setActive] = useState(false);
-  const [values, setSetValues] = useState(false);
+  // const [values, setSetValues] = useState(false);
   const handleClick = (e) => {
-    setSetValues(e.currentTarget.innerText);
+    // setSetValues(e.currentTarget.innerText);
     setActive(false);
 
     if (typeof onChange !== "undefined") {
@@ -92,7 +92,7 @@ export const SelectDropdown = ({
       <div className="select__wrapper">
         <Select
           options={selectOptions || options}
-          label={selectLabel || "Select item"}
+          label={selectLabel || "filter Options"}
           onChange={response}
           value={values.selected}
           id="selected"

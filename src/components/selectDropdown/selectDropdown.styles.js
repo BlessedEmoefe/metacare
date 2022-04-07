@@ -11,11 +11,12 @@ export const SelectDropdownWrapper = styled("div")`
     text-align: left;
     width: 100%;
     border-radius: 6px;
-    background: transparent;
+    background: #fff;
     border: 1px solid ${colors.headerShade.light};
     display: flex;
     justify-content: center;
-    padding: 0.8em 0.2em;
+    // padding: 0.8em 0.2em;
+    height: 45px;
     flex-direction: column;
     position: relative;
   }
@@ -36,13 +37,13 @@ export const SelectDropdownWrapper = styled("div")`
     position: absolute;
     right: 0.8em;
     top: 0.3em;
-    border: 0.5em solid ${colors.primary};
-    border-color: ${colors.iconColor};
+    border: 0.5em solid ${colors.black.strong};
+    border-color: ${colors.black.strong};
     width: 0;
     height: 0;
     border: 7px solid transparent;
     border-top: 0;
-    border-top: 11px solid ${colors.iconColor};
+    border-top: 11px solid ${colors.black.strong};
     transition: 0.4s all ease-in-out;
   }
 
@@ -87,7 +88,7 @@ export const SelectDropdownWrapper = styled("div")`
     overflow-y: scroll;
     box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.2);
     z-index: 999;
-    border: 0.06em solid ${colors.primary};
+    border: 0.06em solid ${colors.black.strong};
     background: #fff;
     border-radius: 0.25em;
     padding: 0;
@@ -105,11 +106,11 @@ export const SelectDropdownWrapper = styled("div")`
   }
 
   .select__options .select__option:hover {
-    background: ${colors.bg.lightBg};
+    background: ${colors.white};
   }
   .select__options .select__option-active {
-    background: ${colors.primary};
-    color: ${colors.white};
+    background: ${colors.white};
+    color: ${colors.black.strong};
   }
 
   .select-active .select__trigger {
@@ -121,7 +122,6 @@ export const SelectDropdownWrapper = styled("div")`
     z-index: 9;
     /* background:red; */
   }
-  
 
   .select-active .select__options {
     max-height: 18em;
@@ -162,7 +162,7 @@ export const SelectDropdownWrapper = styled("div")`
     height: 0;
     border: 7px solid transparent;
     border-bottom: 0;
-    border-top: 11px solid ${colors.primary};
+    border-top: 11px solid ${colors.black.strong};
   }
 
   @keyframes fadeIn {
