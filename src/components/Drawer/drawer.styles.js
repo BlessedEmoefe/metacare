@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import {colors} from "../../infrastructure/theme/colors"
+import { colors } from "../../infrastructure/theme/colors";
 
 export const DrawerWrap = styled("div")`
   .desktopMainContainer {
@@ -8,7 +8,7 @@ export const DrawerWrap = styled("div")`
     height: 100%;
     background: ${({ background }) => (background ? background : "#fff")};
     position: fixed;
-    border-right:1px solid ${colors.shade};
+    border-right: 1px solid ${colors.shade};
     z-index: 10001;
     top: 0;
     transition: 300ms ease-in-out;
@@ -134,11 +134,35 @@ export const DrawerWrap = styled("div")`
       }
       &:hover {
         background: ${colors.bg.lightBg};
-        border-left: 3px solid ${colors.primary};
+        border-left: 3px solid ${colors.purple};
         span {
-          color: ${colors.primary};
+          color: ${colors.purple};
         }
       }
+
+      // ul {
+      //   list-style-type: none;
+      //   padding: 0;
+      //   display: flex;
+      //   // justify-content
+      //   flex-direction: column;
+      //   li {
+      //     margin: 5px 0;
+      //     cursor: pointer;
+      //     border-left: 6px solid transparent;
+      //     border-right: 6px solid transparent;
+      //     span {
+      /* padding: ${({ smallDrawer }) =>
+        smallDrawer ? "15px 12px" : "15px 12px"}*/
+      //       min-width: ${({ smallDrawer }) => smallDrawer && " 195px"};
+      //       transition: 300ms ease-in-out;
+      //       display: flex;
+      //       justify-content: space-between;
+      //       // background: blue;
+      //       align-items: center;
+      //     }
+      //   }
+      // }
     }
   }
   @keyframes rippleForward {
@@ -177,10 +201,10 @@ export const DrawerWrap = styled("div")`
     }
   }
   .isActive {
-    background: ${colors.bg.lightBg};
+    background: ${colors.bg.darkBg};
     // border-left: 3px solid ${colors.primary};
     a span {
-      color: ${colors.primary} !important;
+      color: ${colors.purple} !important;
       font-weight: 400;
     }
   }

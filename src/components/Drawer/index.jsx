@@ -40,7 +40,7 @@ export const Drawer = ({
                   onClick={() =>
                     //  navigate(path)
                     console.log(path)
-                    }
+                  }
                   key={generateID(20)}
                   className={`${isActive(path) ? "isActive" : ""}`}
                 >
@@ -53,13 +53,17 @@ export const Drawer = ({
                       <RightArrowIcon />
                     </div>
                   </div>
-                  <ul className="dropDown">
+                  {/* <ul className="dropDown">
                     <li className="dropDownNav">
                       <span>Main</span>
-                      <span>Main</span>
+                    </li>
+                    <li>
                       <span>Main</span>
                     </li>
-                  </ul>
+                    <li>
+                      <span>Main</span>
+                    </li>
+                  </ul> */}
                 </li>
               );
             })}
