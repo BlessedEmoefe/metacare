@@ -8,6 +8,7 @@ export const DrawerWrap = styled("div")`
     height: 100%;
     background: ${({ background }) => (background ? background : "#fff")};
     position: fixed;
+    border-right:1px solid ${colors.shade};
     z-index: 10001;
     top: 0;
     transition: 300ms ease-in-out;

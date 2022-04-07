@@ -22,6 +22,7 @@ export const HeaderContainer = styled.div`
   margin: 0 0 0 auto;
   @media (max-width: 600px) {
     width: 100%;
+    height: auto;
   }
 `;
 
@@ -36,6 +37,7 @@ export const InnerWrapper = styled.div`
   .major {
     width: auto;
     height: max-content;
+    padding: 0;
     @media (max-width: 800px) {
       width: max-content;
     }
@@ -122,16 +124,16 @@ export const HeaderInfoSection = styled.div`
   display: flex;
   justify-content: space-around;
   align-items: center;
-  position: relative;
   @media (max-width: 800px) {
-    width:40%;
+    width: 40%;
+    height: auto;
   }
 `;
 export const NotificationContainer = styled.div`
   padding: 0;
   width: auto;
-  display:flex;
-  justify-content:space-around;
+  display: flex;
+  justify-content: space-around;
   :hover {
     cursor: pointer;
   }

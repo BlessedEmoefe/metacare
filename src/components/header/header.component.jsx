@@ -49,12 +49,11 @@ const Header = ({ smallDrawer, handleNoDrawer }) => {
           />
         </SearchBarSection>
 
-        <HeaderInfoSection
-          onClick={() => {
-            console.log("Hello world");
-          }}
-        >
+        <HeaderInfoSection>
           <NotificationContainer
+            onClick={() => {
+              console.log("Notification button Clicked");
+            }}
           >
             <NotificationIcon />
             <Ribbon>
@@ -63,12 +62,18 @@ const Header = ({ smallDrawer, handleNoDrawer }) => {
           </NotificationContainer>
 
           <VerticalDivider
-            height={"70%"}
+            height={"100%"}
+            
+            // resFlexDirection={"row"}
             margin="0 0.8rem"
             background={colors.shade}
           />
 
-          <UserProfileContainer>
+          <UserProfileContainer
+            onClick={() => {
+              console.log("Profile button Clicked");
+            }}
+          >
             <UserProfilePreview>
               <UserProfileImage src={ProfileImage} alt="profile-Image" />
             </UserProfilePreview>

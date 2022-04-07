@@ -3,7 +3,6 @@ import { DrawerWrap } from "./drawer.styles";
 import { drawerItems } from "./drawerItems";
 import { RightArrowIcon } from "../../assets/svg";
 import { FlexibleDiv } from "../flexibleDiv/flexibleDiv.component";
-import Logo from "../../assets/images/logo.png";
 import { generateID } from "../../infrastructure/lib/generateID";
 import { useNavigate, useLocation } from "react-router-dom";
 import { UserLogoCard } from "../userLogoCard/userLogoCard.component";
@@ -20,9 +19,9 @@ export const Drawer = ({
   // const { dispatch } = useContext(AppContext);
   const isActive = (href) => location.pathname === href;
 
-  const handleLogout = () => {
-    console.log(location.pathname);
-  };
+  // const handleLogout = () => {
+  //   console.log(location.pathname);
+  // };
 
   return (
     <DrawerWrap

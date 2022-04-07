@@ -3,6 +3,7 @@ import GeneralLayout from "../../components/Layout/GeneralLayout";
 import {} from "./Dashboard.styles";
 import { SubHeader } from "../../components/subHeader/subHeader.component";
 import { Spacer } from "../../components/spacer/spacer.component";
+import { TabHeader } from "../../components/tabHeader/tabHeader.component";
 // import { colors } from "../../infrastructure/theme/colors";
 // import { UserLogoCard } from "../../components/userLogoCard/userLogoCard.component";
 // import CustomTable from "../../components/Table";
@@ -10,6 +11,7 @@ import { Spacer } from "../../components/spacer/spacer.component";
 const Dashboard = () => {
   return (
     <GeneralLayout>
+      <TabHeader />
       <SubHeader subDirectory={"Amount Deposited"} searchBar />
       <Spacer />
     </GeneralLayout>

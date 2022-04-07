@@ -9,7 +9,6 @@ export const LayoutMain = styled('div')`
   margin: 0 0 0 auto;
   min-height: calc(100vh - 60px);
   transition: 300ms ease-in-out;
-  padding: 10px 15px;
   overflow: hidden;
   @media (max-width: 600px) {
   padding: 20px;

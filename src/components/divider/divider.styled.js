@@ -11,16 +11,17 @@ export const DividerLine = styled("div")`
 `;
 export const VerticalDividerLineWrapper = styled(FlexibleDiv)`
   padding: 0;
-  background: red;
-  height: 100%;
+  height: ${({ height }) => (height ? height : "100%")};
+  justify-content: center;
+  width: max-content;
+  position: relative;
   margin: ${({ margin }) => (margin ? margin : "0")};
 `;
 export const VerticalDividerLine = styled("div")`
   width: ${({ width }) => (width ? width : "1px")};
-  height: ${({ height }) => (height ? height : "100%")};
+  height: 100%;
   background: ${({ background }) =>
     background ? background : colors.black.soft};
-  
   position: absolute;
   padding: 0;
   max-height: inherit;
