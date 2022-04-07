@@ -178,7 +178,7 @@ export const DrawerWrap = styled("div")`
   }
   .isActive {
     background: ${colors.bg.lightBg};
-    border-left: 3px solid ${colors.primary};
+    // border-left: 3px solid ${colors.primary};
     a span {
       color: ${colors.primary} !important;
       font-weight: 400;

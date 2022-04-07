@@ -2,6 +2,7 @@ import React from "react";
 import {
   AnalyticsCardContainer,
   ChartSection,
+  ChartWrapper,
   ChartTools,
   LeftTopSection,
   ChartName,
@@ -64,7 +65,7 @@ export const options = {
     // },
   },
 
-  // maintainAspectRatio: false,
+  maintainAspectRatio: false,
   elements: {
     backgroundColor: "teal",
     borderWidth: "5px",
@@ -116,12 +117,14 @@ export const AnalyticsCard = ({
             </FilterButton>
           </RightTopSection>
         </ChartTools>
-        <Line
-          data={chartData}
-          options={options}
-          redraw={true}
-          height={"70px"}
-        />
+        <ChartWrapper>
+          <Line
+            data={chartData}
+            options={options}
+            redraw={true}
+            height={"100%"}
+          />
+        </ChartWrapper>
       </ChartSection>
       <CardSection>
         <Card flexDirection="column">

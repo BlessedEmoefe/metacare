@@ -3,7 +3,7 @@ import { colors } from "../../../infrastructure/theme/colors";
 const drawer = "200px";
 
 export const LayoutMain = styled('div')`
-  background: ${colors.bg.darkBg};
+  background: ${colors.bg.white};
   width: ${({ smallDrawer }) =>
     smallDrawer ? `calc(100% - ${drawer})` : " calc(100% - 50px)"};
   margin: 0 0 0 auto;

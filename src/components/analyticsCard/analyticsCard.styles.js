@@ -11,7 +11,7 @@ export const AnalyticsCardContainer = styled(FlexibleDiv)`
   border: 1px solid ${colors.shade};
   border-radius: 10px;
   background: ${colors.white};
-  padding: 0;
+  padding: 0 0.5rem;
 `;
 
 export const ChartSection = styled(FlexibleDiv)`
@@ -21,6 +21,12 @@ width:80%;
 // border-radius:10px;
 background:${colors.white};
 padding;0;
+@media (max-width: 1050px) {
+width:70%;
+   }
+    @media (max-width: 800px) {
+    width: 100%;
+  }
 `;
 
 export const ChartTools = styled(FlexibleDiv)`
@@ -33,6 +39,32 @@ export const LeftTopSection = styled(FlexibleDiv)`
   padding: 1rem 0;
   width: 40%;
   justify-content: space-around;
+
+  @media (max-width: 800px) {
+    width: 100%;
+    flex-direction: row;
+
+    .chart {
+      height: 20px;
+    }
+    .chart {
+      height: 150px;
+    }
+  }
+`;
+
+export const ChartWrapper = styled(FlexibleDiv)`
+  padding: 0 1rem;
+  width: 100%;
+  height: 240px;
+  justify-content: space-around;
+  // background: red;
+
+  @media (max-width: 800px) {
+    height: 40vh;
+    width: 100%;
+    flex-direction: row;
+  }
 `;
 
 export const ChartName = styled(Text)`
@@ -58,17 +90,24 @@ export const RightTopSection = styled(FlexibleDiv)`
   width: 40%;
   justify-content: space-around;
   align-items: center;
+  @media (max-width: 800px) {
+    width: 100%;
+    flex-direction: row;
+  }
 `;
 export const HighPriority = styled(FlexibleDiv)`
   padding: 0;
   width: auto;
+  @media (max-width: 800px) {
+    flex-direction: row;
+  }
 `;
 export const Indicator = styled(FlexibleDiv)`
   padding: 0;
   width: 10px;
   height: 10px;
   margin-right: 0.7rem;
-  background: ${({ color }) => (color ? color : "yellow")}; 
+  background: ${({ color }) => (color ? color : "yellow")};
 `;
 export const HighPriorityText = styled(Text)`
   color: ${colors.black.strong};
@@ -89,6 +128,9 @@ export const FilterButton = styled(FlexibleDiv)`
   border: 1px solid ${colors.shade};
   border-radius: 8px;
   cursor: pointer;
+  @media (max-width: 800px) {
+    flex-direction: row;
+  }
 `;
 
 export const ButtonText = styled(Text)`
@@ -111,6 +153,12 @@ export const CardSection = styled(FlexibleDiv)`
   // align-items: center;
   justify-content: space-around;
   // flex: 1;
+  @media (max-width: 1050px) {
+    width: 30%;
+  }
+  @media (max-width: 800px) {
+    width: 100%;
+  }
 `;
 
 export const Card = styled(FlexibleDiv)`
@@ -125,6 +173,9 @@ export const ResponseTime = styled(Text)`
   font-size: ${fontSizes.smallBody};
 
   width: 100%;
+  @media (max-width: 1050px) {
+    font-size: ${fontSizes.caption};
+  }
 `;
 
 export const TimeStamp = styled(Text)`
