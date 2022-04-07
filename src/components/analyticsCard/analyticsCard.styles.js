@@ -17,8 +17,8 @@ export const AnalyticsCardContainer = styled(FlexibleDiv)`
 export const ChartSection = styled(FlexibleDiv)`
 // background:red;
 width:80%;
-border:1px solid ${colors.shade};
-border-radius:10px;
+// border:1px solid ${colors.shade};
+// border-radius:10px;
 background:${colors.white};
 padding;0;
 `;

@@ -45,6 +45,25 @@ ChartJS.register(
 
 export const options = {
   responsive: true,
+  scales: {
+    x: {
+      grid: {
+        display: false,
+      },
+    },
+    y: {
+      beginAtZero: true,
+      suggestedMax: 50,
+    },
+    // x: {
+    //   beginAtZero: true,
+    //   suggestedMax: 420
+    // },
+    // ticks: {
+    //   stepSize: 100
+    // },
+  },
+
   // maintainAspectRatio: false,
   elements: {
     backgroundColor: "teal",
