@@ -33,6 +33,8 @@ import {
 import { Line } from "react-chartjs-2";
 import { Spacer } from "../spacer/spacer.component";
 
+
+
 ChartJS.register(
   CategoryScale,
   LinearScale,
@@ -69,19 +71,19 @@ export const options = {
 
 const labels = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug"];
 
-export const data = {
-  labels,
-  datasets: [
-    {
-      label: "Dataset 1",
-      data: [10, 18, 48, 8, 42, 32, 45, 12],
-      borderColor: "rgb(255, 99, 132)",
-      backgroundColor: "#fff",
-    },
-  ],
-};
+// export const data = {
+//   labels,
+//   datasets: [
+//     {
+//       label: "Dataset 1",
+//       data: [10, 18, 48, 8, 42, 32, 45, 12],
+//       borderColor: "rgb(255, 99, 132)",
+//       backgroundColor: "#fff",
+//     },
+//   ],
+// };
 
-export const AnalyticsCard = () => {
+export const AnalyticsCard = ({chartData}) => {
   return (
     <AnalyticsCardContainer>
       <ChartSection>
@@ -107,7 +109,7 @@ export const AnalyticsCard = () => {
           </RightTopSection>
         </ChartTools>
         <Line
-          data={data}
+          data={chartData}
           options={options}
           redraw={true}
           height={"70px"}

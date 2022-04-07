@@ -5,9 +5,7 @@ import { SubHeader } from "../../components/subHeader/subHeader.component";
 import { Spacer } from "../../components/spacer/spacer.component";
 import { TabHeader } from "../../components/tabHeader/tabHeader.component";
 import { AnalyticsCard } from "../../components/analyticsCard/analyticsCard.component";
-// import { colors } from "../../infrastructure/theme/colors";
-// import { UserLogoCard } from "../../components/userLogoCard/userLogoCard.component";
-// import CustomTable from "../../components/Table";
+import { ChartData } from "./data";
 
 const Dashboard = () => {
   return (
@@ -18,9 +16,13 @@ const Dashboard = () => {
         searchBar
         btnText={"Export"}
       />
-
       <AnalyticsSection>
-        <AnalyticsCard />
+        {ChartData.map((item) => (
+          <>
+            <AnalyticsCard chartData={item} />
+            <Spacer size="small" />
+          </>
+        ))}
       </AnalyticsSection>
       <Spacer />
     </GeneralLayout>
