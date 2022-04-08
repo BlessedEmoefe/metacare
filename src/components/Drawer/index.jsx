@@ -38,8 +38,7 @@ export const Drawer = ({
               return (
                 <li
                   onClick={() =>
-                    //  navigate(path)
-                    console.log(path)
+                     navigate(path)
                   }
                   key={generateID(20)}
                   className={`${isActive(path) ? "isActive" : ""}`}

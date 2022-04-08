@@ -6,6 +6,11 @@ const Navigation = () => {
     <Router>
       <Routes>
         <Route exact element={<Dashboard />} path="/" />
+        {/* <Route exact element={<Dashboard />} path="/" />
+        <Route exact element={<Dashboard />} path="/" />
+        <Route exact element={<Dashboard />} path="/" />
+        <Route exact element={<Dashboard />} path="/" />
+        <Route exact element={<Dashboard />} path="/" /> */}
         <Route
           path="*"
           element={
