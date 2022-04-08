@@ -2,6 +2,7 @@ import styled from "styled-components";
 import { colors } from "../../infrastructure/theme/colors";
 import { fontWeights } from "../../infrastructure/theme/fonts";
 import { FlexibleDiv } from "../flexibleDiv/flexibleDiv.component";
+import { RightArrowIcon as RightIcon } from "../../assets/svg";
 
 export const DrawerWrap = styled("div")`
   // @keyframes rippleForward {
@@ -65,17 +66,12 @@ export const Ul = styled.ul`
 export const Li = styled.li`
   margin: 5px 0;
   cursor: pointer;
-  border-left: 3px solid transparent;
   border-right: 3px solid transparent;
-
-  // li > .isActive {
-  //   background: ${colors.bg.darkBg};
-  //   // border-left: 3px solid ${colors.primary};
-  //   a span {
-  //     color: ${colors.purple} !important;
-  //     font-weight: 400;
-  //   }
-  }
+  background: ${({ pageSection }) =>
+    pageSection ? "transparent" : "transparent"};
+  // border-left: 3px solid
+  //   ${({ pageSection }) => (pageSection ? "teal" : "transparent")};
+  font-weight: 400;
 `;
 export const DrawerItem = styled.div`
   padding: 15px 12px;
@@ -91,6 +87,10 @@ export const DrawerItem = styled.div`
     border-left: 3px solid ${colors.purple};
     span {
       color: ${colors.purple};
+    }
+    .rightIcon {
+      color: ${colors.purple};
+      background:red;
     }
 
     @keyframes fade {
@@ -120,7 +120,8 @@ export const LogoMain = styled.div`
 `;
 export const Name = styled.span`
   font-size: 0.9rem;
-  color: ${colors.black.regular};
+  color: ${({ pageSection }) =>
+    pageSection ? colors.purple : colors.black.regular};
   white-space: nowrap;
   transition: 300ms ease-in-out;
   min-width: ${({ smallDrawer }) => !smallDrawer && "80%"};
@@ -131,10 +132,19 @@ export const IconWrapper = styled.div`
   justify-self: flex-end;
   // background: teal;
   width: auto;
+  .rightIcon {
+   /* color: ${({ pageSection }) =>
+      pageSection ? colors.purple : colors.black.regular};*/
+    color: red;
+  }
+`;
+
+export const RightArrowIcon = styled(RightIcon)`
+  
 `;
 export const DropDown = styled.div`
   padding: 0 0 0 1.5rem;
-  display: flex;
+  display: ${({ pageSection }) => (pageSection ? "flex" : "none")};
   height: auto;
   width: 100%;
   flex-direction: column;

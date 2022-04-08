@@ -12,6 +12,7 @@ import {
   LogoMain,
   Name,
   IconWrapper,
+  RightArrowIcon,
   DropDown,
   DropDownNav,
   ModalMainContainerOverlay,
@@ -19,7 +20,7 @@ import {
   RightArrow,
 } from "./drawer.styles";
 import { drawerItems } from "./drawerItems";
-import { RightArrowIcon } from "../../assets/svg";
+
 import { generateID } from "../../infrastructure/lib/generateID";
 import { useNavigate, useLocation } from "react-router-dom";
 import { UserLogoCard } from "../userLogoCard/userLogoCard.component";
@@ -63,24 +64,30 @@ export const Drawer = ({
                 <Li
                   onClick={() => setPageSection(name)}
                   key={generateID(20)}
-                  className={`${pageSection === name} ? "isActive" : ""}`}
+                  pageSection={pageSection === name ? true : false}
                 >
                   <DrawerItem smallDrawer={smallDrawer}>
                     <IconTextWrapper>
                       <LogoMain>{logo}</LogoMain>
-                      <Name smallDrawer={smallDrawer}>{name}</Name>
+                      <Name
+                        pageSection={pageSection === name ? true : false}
+                        smallDrawer={smallDrawer}
+                      >
+                        {name}
+                      </Name>
                     </IconTextWrapper>
                     <IconWrapper>
-                      <RightArrowIcon />
+                      {pageSection === name ? (
+                        <RightArrowIcon className={"rightIcon"} />
+                      ) : (
+                        <RightArrowIcon color={"red"} className={"rightIcon"} />
+                      )}
                     </IconWrapper>
                   </DrawerItem>
-                  <DropDown
-                  // `${
-                  //   isActive(path) ? "dropDown" : "closeDropDown"
-                  // }`
-                  >
+                  <DropDown pageSection={pageSection === name ? true : false}>
                     <DropDownNav
                       smallDrawer={smallDrawer}
+                      pageSection={pageSection === name ? true : false}
                       onClick={() => navigate(path)}
                     >
                       Main
