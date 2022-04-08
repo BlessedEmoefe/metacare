@@ -1,8 +1,25 @@
-import React from /* { useContext }*/ "react";
-import { DrawerWrap } from "./drawer.styles";
+import React, { useState } from "react";
+import {
+  DrawerWrap,
+  DesktopMainContainer,
+  Iconize,
+  Ripple,
+  Container,
+  Ul,
+  Li,
+  DrawerItem,
+  IconTextWrapper,
+  LogoMain,
+  Name,
+  IconWrapper,
+  DropDown,
+  DropDownNav,
+  ModalMainContainerOverlay,
+  ModalMainContainer,
+  RightArrow,
+} from "./drawer.styles";
 import { drawerItems } from "./drawerItems";
 import { RightArrowIcon } from "../../assets/svg";
-import { FlexibleDiv } from "../flexibleDiv/flexibleDiv.component";
 import { generateID } from "../../infrastructure/lib/generateID";
 import { useNavigate, useLocation } from "react-router-dom";
 import { UserLogoCard } from "../userLogoCard/userLogoCard.component";
@@ -15,6 +32,12 @@ export const Drawer = ({
 }) => {
   const navigate = useNavigate();
   const location = useLocation();
+  const [pageSection, setPageSection] = useState("");
+  const handlePageSection = (name) => {
+    setPageSection(name);
+    console.log(`Name: ${name}, PageSection: ${pageSection}`);
+    return pageSection === name ? true : false;
+  };
   const isActive = (href) => location.pathname === href;
 
   return (
@@ -23,48 +46,54 @@ export const Drawer = ({
       noDrawer={noDrawer}
       background={background}
     >
-      <div className="desktopMainContainer">
-        <FlexibleDiv
-          className="enlargeDrawer iconize"
+      <DesktopMainContainer smallDrawer={smallDrawer} background={background}>
+        <Iconize
+          smallDrawer={smallDrawer}
+          className="enlargeDrawer"
           onClick={() => handleSmallDrawer()}
         >
-          <div className="ripple" />
+          <Ripple />
           <UserLogoCard />
-        </FlexibleDiv>
+        </Iconize>
         {/* <DrawerProfileCard smallDrawer={smallDrawer} /> */}
-        <div className="container">
-          <ul>
+        <Container>
+          <Ul>
             {drawerItems.map(({ path, logo, name }) => {
               return (
-                <li
-                  onClick={() => navigate(path)}
+                <Li
+                  onClick={() => setPageSection(name)}
                   key={generateID(20)}
-                  className={`${isActive(path) ? "isActive" : ""}`}
+                  className={`${pageSection === name} ? "isActive" : ""}`}
                 >
-                  <div className="drawerItem">
-                    <div className="iconTextWrapper">
-                      <div className="logoMain">{logo}</div>
-                      <span>{name}</span>
-                    </div>
-                    <div className="iconWrapper">
+                  <DrawerItem smallDrawer={smallDrawer}>
+                    <IconTextWrapper>
+                      <LogoMain>{logo}</LogoMain>
+                      <Name smallDrawer={smallDrawer}>{name}</Name>
+                    </IconTextWrapper>
+                    <IconWrapper>
                       <RightArrowIcon />
-                    </div>
-                  </div>
-                  <div
-                    className={`${
-                      isActive(path) ? "dropDown" : "closeDropDown"
-                    }`}
+                    </IconWrapper>
+                  </DrawerItem>
+                  <DropDown
+                  // `${
+                  //   isActive(path) ? "dropDown" : "closeDropDown"
+                  // }`
                   >
-                    <div className="dropDownNav">Main</div>
-                    <div className="dropDownNav">Peace Maker</div>
-                    <div className="dropDownNav">Instint Buys</div>
-                  </div>
-                </li>
+                    <DropDownNav
+                      smallDrawer={smallDrawer}
+                      onClick={() => navigate(path)}
+                    >
+                      Main
+                    </DropDownNav>
+                    <DropDownNav>Peace Maker</DropDownNav>
+                    <DropDownNav>Instint Buys</DropDownNav>
+                  </DropDown>
+                </Li>
               );
             })}
-          </ul>
-        </div>
-      </div>
+          </Ul>
+        </Container>
+      </DesktopMainContainer>
     </DrawerWrap>
   );
 };
@@ -89,39 +118,38 @@ export const ModalDrawer = ({
       noDrawer={noDrawer}
       background={background}
     >
-      <div
-        className="modalMainContainerOverlay"
+      <ModalMainContainerOverlay
+        noDrawer={noDrawer}
+        background={background}
         onClick={() => handleNoDrawer()}
       />
 
-      <div className="modalMainContainer">
-        <div className="rightArrow iconize" onClick={() => handleNoDrawer()}>
-          <div className="ripple" />
+      <ModalMainContainer noDrawer={noDrawer}>
+        <RightArrow onClick={() => handleNoDrawer()}>
+          <Ripple />
           <RightArrowIcon width="20px" height="20px" color="red" />
-        </div>
-
+        </RightArrow>
         <UserLogoCard />
-
-        <div className="container">
-          <ul>
+        <Container>
+          <Ul>
             {drawerItems.map(({ path, logo, name }) => {
               if (name !== "Log Out") {
                 return (
-                  <li
+                  <Li
                     onClick={() => navigate(path)}
                     key={generateID(20)}
                     className={`${isActive(path) ? "isActive" : ""}`}
                   >
-                    <div className="drawerItem">
-                      <div className="iconWrapper">
-                        <div className="logoMain">{logo}</div>
-                        <span>{name}</span>
-                      </div>
-                      <div className="iconWrapper">
+                    <DrawerItem>
+                      <IconTextWrapper>
+                        <LogoMain>{logo}</LogoMain>
+                        <Name>{name}</Name>
+                      </IconTextWrapper>
+                      <IconWrapper>
                         <RightArrowIcon />
-                      </div>
-                    </div>
-                  </li>
+                      </IconWrapper>
+                    </DrawerItem>
+                  </Li>
                 );
               } else {
                 return (
@@ -138,9 +166,9 @@ export const ModalDrawer = ({
                 );
               }
             })}
-          </ul>
-        </div>
-      </div>
+          </Ul>
+        </Container>
+      </ModalMainContainer>
     </DrawerWrap>
   );
 };
