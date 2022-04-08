@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { colors } from "../../infrastructure/theme/colors";
 import { fontWeights } from "../../infrastructure/theme/fonts";
 import { FlexibleDiv } from "../flexibleDiv/flexibleDiv.component";
-import { RightArrowIcon as RightIcon } from "../../assets/svg";
+
 
 export const DrawerWrap = styled("div")`
   // @keyframes rippleForward {
@@ -67,10 +67,6 @@ export const Li = styled.li`
   margin: 5px 0;
   cursor: pointer;
   border-right: 3px solid transparent;
-  background: ${({ pageSection }) =>
-    pageSection ? "transparent" : "transparent"};
-  // border-left: 3px solid
-  //   ${({ pageSection }) => (pageSection ? "teal" : "transparent")};
   font-weight: 400;
 `;
 export const DrawerItem = styled.div`
@@ -132,16 +128,18 @@ export const IconWrapper = styled.div`
   justify-self: flex-end;
   // background: teal;
   width: auto;
-  .rightIcon {
-   /* color: ${({ pageSection }) =>
+  // .rightIcon {
+  /* color: ${({ pageSection }) =>
       pageSection ? colors.purple : colors.black.regular};*/
-    color: red;
+  //   color: red;
+  // }
+
+  svg{
+    color:teal;
   }
 `;
 
-export const RightArrowIcon = styled(RightIcon)`
-  
-`;
+
 export const DropDown = styled.div`
   padding: 0 0 0 1.5rem;
   display: ${({ pageSection }) => (pageSection ? "flex" : "none")};

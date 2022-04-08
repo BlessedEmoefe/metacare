@@ -12,7 +12,6 @@ import {
   LogoMain,
   Name,
   IconWrapper,
-  RightArrowIcon,
   DropDown,
   DropDownNav,
   ModalMainContainerOverlay,
@@ -24,6 +23,7 @@ import { drawerItems } from "./drawerItems";
 import { generateID } from "../../infrastructure/lib/generateID";
 import { useNavigate, useLocation } from "react-router-dom";
 import { UserLogoCard } from "../userLogoCard/userLogoCard.component";
+import { BottomArrowIcon, RightArrowIcon } from "../../assets/svg";
 
 export const Drawer = ({
   handleSmallDrawer,
@@ -33,13 +33,13 @@ export const Drawer = ({
 }) => {
   const navigate = useNavigate();
   const location = useLocation();
+  const [page, setPage] = useState(true);
   const [pageSection, setPageSection] = useState("");
-  const handlePageSection = (name) => {
-    setPageSection(name);
-    console.log(`Name: ${name}, PageSection: ${pageSection}`);
-    return pageSection === name ? true : false;
-  };
-  const isActive = (href) => location.pathname === href;
+  // const handlePageSection = (name) => {
+  //   pageSection === name ? setPageSection(false) setPage() : setPageSection(name);
+  //   console.log(`Name: ${name}, PageSection: ${pageSection}`);
+  // };
+  // const isActive = (href) => location.pathname === href;
 
   return (
     <DrawerWrap
@@ -61,12 +61,21 @@ export const Drawer = ({
           <Ul>
             {drawerItems.map(({ path, logo, name }) => {
               return (
-                <Li
-                  onClick={() => setPageSection(name)}
-                  key={generateID(20)}
-                  pageSection={pageSection === name ? true : false}
-                >
-                  <DrawerItem smallDrawer={smallDrawer}>
+                <Li>
+                  <DrawerItem
+                    smallDrawer={smallDrawer}
+                    onClick={() =>
+                      pageSection === name
+                        ? setPage(false)
+                        : (setPage(true),
+                          setPageSection(name),
+                          console.log(page))
+                    }
+                    key={generateID(20)}
+                    pageSection={
+                      page === true && pageSection === name ? true : false
+                    }
+                  >
                     <IconTextWrapper>
                       <LogoMain>{logo}</LogoMain>
                       <Name
@@ -78,9 +87,9 @@ export const Drawer = ({
                     </IconTextWrapper>
                     <IconWrapper>
                       {pageSection === name ? (
-                        <RightArrowIcon className={"rightIcon"} />
+                        <BottomArrowIcon />
                       ) : (
-                        <RightArrowIcon color={"red"} className={"rightIcon"} />
+                        <RightArrowIcon />
                       )}
                     </IconWrapper>
                   </DrawerItem>
@@ -112,12 +121,11 @@ export const ModalDrawer = ({
   background,
 }) => {
   const navigate = useNavigate();
-  const location = useLocation();
-  const isActive = (href) => location.pathname === href;
+  // const location = useLocation();
+  // const isActive = (href) => location.pathname === href;
+  const [page, setPage] = useState(true);
+  const [pageSection, setPageSection] = useState("");
 
-  const handleLogout = async () => {
-    console.log(location.pathname);
-  };
 
   return (
     <DrawerWrap
@@ -140,38 +148,51 @@ export const ModalDrawer = ({
         <Container>
           <Ul>
             {drawerItems.map(({ path, logo, name }) => {
-              if (name !== "Log Out") {
-                return (
-                  <Li
-                    onClick={() => navigate(path)}
+              return (
+                <Li>
+                  <DrawerItem
+                    onClick={() =>
+                      pageSection === name
+                        ? setPage(false)
+                        : (setPage(true),
+                          setPageSection(name),
+                          console.log(page))
+                    }
                     key={generateID(20)}
-                    className={`${isActive(path) ? "isActive" : ""}`}
+                    pageSection={
+                      page === true && pageSection === name ? true : false
+                    }
                   >
-                    <DrawerItem>
-                      <IconTextWrapper>
-                        <LogoMain>{logo}</LogoMain>
-                        <Name>{name}</Name>
-                      </IconTextWrapper>
-                      <IconWrapper>
+                    <IconTextWrapper>
+                      <LogoMain>{logo}</LogoMain>
+                      <Name
+                        smallDrawer={smallDrawer}
+                        pageSection={pageSection === name ? true : false}
+                      >
+                        {name}
+                      </Name>
+                    </IconTextWrapper>
+                    <IconWrapper>
+                      {pageSection === name ? (
+                        <BottomArrowIcon />
+                      ) : (
                         <RightArrowIcon />
-                      </IconWrapper>
-                    </DrawerItem>
-                  </Li>
-                );
-              } else {
-                return (
-                  <li
-                    onClick={handleLogout}
-                    key={generateID(20)}
-                    className={`${isActive(path) ? "isActive" : ""}`}
-                  >
-                    <div className="drawerItem">
-                      <div className="logoMain">{logo}</div>
-                      <span>{name}</span>
-                    </div>
-                  </li>
-                );
-              }
+                      )}
+                    </IconWrapper>
+                  </DrawerItem>
+                  <DropDown pageSection={pageSection === name ? true : false}>
+                    <DropDownNav
+                      smallDrawer={smallDrawer}
+                      pageSection={pageSection === name ? true : false}
+                      onClick={() => navigate(path)}
+                    >
+                      Main
+                    </DropDownNav>
+                    <DropDownNav>Peace Maker</DropDownNav>
+                    <DropDownNav>Instint Buys</DropDownNav>
+                  </DropDown>
+                </Li>
+              );
             })}
           </Ul>
         </Container>
