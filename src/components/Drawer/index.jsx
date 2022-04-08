@@ -21,7 +21,9 @@ import {
 import { drawerItems } from "./drawerItems";
 
 import { generateID } from "../../infrastructure/lib/generateID";
-import { useNavigate, useLocation } from "react-router-dom";
+import { useNavigate
+  // , useLocation 
+} from "react-router-dom";
 import { UserLogoCard } from "../userLogoCard/userLogoCard.component";
 import { BottomArrowIcon, RightArrowIcon } from "../../assets/svg";
 
@@ -32,7 +34,7 @@ export const Drawer = ({
   background,
 }) => {
   const navigate = useNavigate();
-  const location = useLocation();
+  // const location = useLocation();
   const [page, setPage] = useState(true);
   const [pageSection, setPageSection] = useState("");
   // const handlePageSection = (name) => {
@@ -125,7 +127,6 @@ export const ModalDrawer = ({
   // const isActive = (href) => location.pathname === href;
   const [page, setPage] = useState(true);
   const [pageSection, setPageSection] = useState("");
-
 
   return (
     <DrawerWrap
