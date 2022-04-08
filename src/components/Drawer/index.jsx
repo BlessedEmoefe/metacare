@@ -37,9 +37,7 @@ export const Drawer = ({
             {drawerItems.map(({ path, logo, name }) => {
               return (
                 <li
-                  onClick={() =>
-                     navigate(path)
-                  }
+                  onClick={() => navigate(path)}
                   key={generateID(20)}
                   className={`${isActive(path) ? "isActive" : ""}`}
                 >
@@ -52,17 +50,15 @@ export const Drawer = ({
                       <RightArrowIcon />
                     </div>
                   </div>
-                  {/* <ul className="dropDown">
-                    <li className="dropDownNav">
-                      <span>Main</span>
-                    </li>
-                    <li>
-                      <span>Main</span>
-                    </li>
-                    <li>
-                      <span>Main</span>
-                    </li>
-                  </ul> */}
+                  <div
+                    className={`${
+                      isActive(path) ? "dropDown" : "closeDropDown"
+                    }`}
+                  >
+                    <div className="dropDownNav">Main</div>
+                    <div className="dropDownNav">Peace Maker</div>
+                    <div className="dropDownNav">Instint Buys</div>
+                  </div>
                 </li>
               );
             })}
