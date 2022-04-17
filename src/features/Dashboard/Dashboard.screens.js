@@ -31,6 +31,11 @@ const Dashboard = () => {
         searchBar
         btnText={"Export"}
       />
+      <SubHeader
+        directory={"Efficiency Analytics"}
+        searchBar
+        btnText={"Export"}
+      />
       <AnalyticsSection>
         {ChartData.map((item) => (
           <>
